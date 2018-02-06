@@ -1,0 +1,704 @@
+Jan 31, 2018 10:41:10 PM worker.Worker main
+INFO: 2018-01-31 22:41:10.109, DATA: {"firstName":"Malcolm","lastName":"Reynolds","password":"browncoat","emailAddress":"mal@firefly.com","dateOfBirth":15738125603,"id":17297,"userName":"captain"}
+Jan 31, 2018 10:41:10 PM worker.Worker sendToElasticsearch
+INFO: YEAR: Sun Jul 19 23:15:10 GMT 1970 : Thu Jul 02 03:42:05 GMT 1970 : 0
+Jan 31, 2018 10:41:10 PM org.apache.http.impl.nio.client.MainClientExec prepare
+FINE: [exchange: 1] start execution
+Jan 31, 2018 10:41:10 PM org.apache.http.client.protocol.RequestAddCookies process
+FINE: CookieSpec selected: default
+Jan 31, 2018 10:41:10 PM org.apache.http.client.protocol.RequestAuthCache doPreemptiveAuth
+FINE: Re-using cached 'basic' auth scheme for http://elasticsearch:9200
+Jan 31, 2018 10:41:10 PM org.apache.http.client.protocol.RequestAuthCache doPreemptiveAuth
+FINE: No credentials for preemptive authentication
+Jan 31, 2018 10:41:10 PM org.apache.http.impl.nio.client.InternalHttpAsyncClient requestConnection
+FINE: [exchange: 1] Request connection for {}->http://elasticsearch:9200
+Jan 31, 2018 10:41:10 PM org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager requestConnection
+FINE: Connection request: [route: {}->http://elasticsearch:9200][total kept alive: 0; route allocated: 0 of 10; total allocated: 0 of 30]
+Jan 31, 2018 10:41:10 PM org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager completed
+FINE: Connection leased: [id: http-outgoing-0][route: {}->http://elasticsearch:9200][total kept alive: 0; route allocated: 1 of 10; total allocated: 1 of 30]
+Jan 31, 2018 10:41:10 PM org.apache.http.impl.nio.client.InternalHttpAsyncClient connectionAllocated
+FINE: [exchange: 1] Connection allocated: CPoolProxy{http-outgoing-0 [ACTIVE]}
+Jan 31, 2018 10:41:10 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl setAttribute
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][r:]: Set attribute http.nio.exchange-handler
+Jan 31, 2018 10:41:10 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl setEvent
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][rw:]: Event set [w]
+Jan 31, 2018 10:41:10 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl setSocketTimeout
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][rw:]: Set timeout 0
+Jan 31, 2018 10:41:10 PM org.apache.http.impl.nio.client.InternalIODispatch connected
+FINE: http-outgoing-0 [ACTIVE]: Connected
+Jan 31, 2018 10:41:10 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl setAttribute
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][rw:]: Set attribute http.nio.http-exchange-state
+Jan 31, 2018 10:41:10 PM org.apache.http.impl.nio.client.InternalHttpAsyncClient verifytRoute
+FINE: Start connection routing
+Jan 31, 2018 10:41:10 PM org.apache.http.impl.nio.client.MainClientExec generateRequest
+FINE: Connection route established
+Jan 31, 2018 10:41:10 PM org.apache.http.impl.nio.client.MainClientExec generateRequest
+FINE: [exchange: 1] Attempt 1 to execute request
+Jan 31, 2018 10:41:10 PM org.apache.http.impl.nio.client.MainClientExec generateRequest
+FINE: Target auth state: UNCHALLENGED
+Jan 31, 2018 10:41:10 PM org.apache.http.impl.nio.client.MainClientExec generateRequest
+FINE: Proxy auth state: UNCHALLENGED
+Jan 31, 2018 10:41:10 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl setSocketTimeout
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][rw:]: Set timeout 30000
+Jan 31, 2018 10:41:10 PM org.apache.http.headers onRequestSubmitted
+FINE: http-outgoing-0 >> PUT /signup/user/11243 HTTP/1.1
+Jan 31, 2018 10:41:10 PM org.apache.http.headers onRequestSubmitted
+FINE: http-outgoing-0 >> Content-Length: 167
+Jan 31, 2018 10:41:10 PM org.apache.http.headers onRequestSubmitted
+FINE: http-outgoing-0 >> Content-Type: application/json; charset=UTF-8
+Jan 31, 2018 10:41:10 PM org.apache.http.headers onRequestSubmitted
+FINE: http-outgoing-0 >> Host: elasticsearch:9200
+Jan 31, 2018 10:41:10 PM org.apache.http.headers onRequestSubmitted
+FINE: http-outgoing-0 >> Connection: Keep-Alive
+Jan 31, 2018 10:41:10 PM org.apache.http.headers onRequestSubmitted
+FINE: http-outgoing-0 >> User-Agent: Apache-HttpAsyncClient/4.1.2 (Java/1.8.0_111-internal)
+Jan 31, 2018 10:41:10 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl setEvent
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][rw:]: Event set [w]
+Jan 31, 2018 10:41:10 PM org.apache.http.impl.nio.client.InternalIODispatch outputReady
+FINE: http-outgoing-0 [ACTIVE] Output ready
+Jan 31, 2018 10:41:10 PM org.apache.http.impl.nio.client.MainClientExec produceContent
+FINE: [exchange: 1] produce content
+Jan 31, 2018 10:41:10 PM org.apache.http.impl.nio.client.MainClientExec requestCompleted
+FINE: [exchange: 1] Request completed
+Jan 31, 2018 10:41:10 PM org.apache.http.impl.nio.client.InternalIODispatch outputReady
+FINE: http-outgoing-0 [ACTIVE] [content length: 167; pos: 167; completed: true]
+Jan 31, 2018 10:41:10 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl write
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][rw:w]: 388 bytes written
+Jan 31, 2018 10:41:10 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "PUT /signup/user/11243 HTTP/1.1[\r][\n]"
+Jan 31, 2018 10:41:10 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "Content-Length: 167[\r][\n]"
+Jan 31, 2018 10:41:10 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "Content-Type: application/json; charset=UTF-8[\r][\n]"
+Jan 31, 2018 10:41:10 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "Host: elasticsearch:9200[\r][\n]"
+Jan 31, 2018 10:41:10 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+Jan 31, 2018 10:41:10 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "User-Agent: Apache-HttpAsyncClient/4.1.2 (Java/1.8.0_111-internal)[\r][\n]"
+Jan 31, 2018 10:41:10 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "[\r][\n]"
+Jan 31, 2018 10:41:10 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "{"firstName":"Malcolm","lastName":"Reynolds","password":"browncoat","emailAddress":"mal@firefly.com","dateOfBirth":15738125603,"id":17297,"userName":"captain","age":0}"
+Jan 31, 2018 10:41:10 PM org.apache.http.impl.nio.client.InternalIODispatch requestReady
+FINE: http-outgoing-0 [ACTIVE] Request ready
+Jan 31, 2018 10:41:10 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl clearEvent
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][r:w]: Event cleared [w]
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl read
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][r:r]: 280 bytes read
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 << "HTTP/1.1 201 Created[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 << "Location: /signup/user/11243[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 << "content-type: application/json; charset=UTF-8[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 << "content-length: 158[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 << "[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 << "{"_index":"signup","_type":"user","_id":"11243","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":0,"_primary_term":1}"
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onResponseReceived
+FINE: http-outgoing-0 << HTTP/1.1 201 Created
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onResponseReceived
+FINE: http-outgoing-0 << Location: /signup/user/11243
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onResponseReceived
+FINE: http-outgoing-0 << content-type: application/json; charset=UTF-8
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onResponseReceived
+FINE: http-outgoing-0 << content-length: 158
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalIODispatch responseReceived
+FINE: http-outgoing-0 [ACTIVE(158)] Response received
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec responseReceived
+FINE: [exchange: 1] Response received HTTP/1.1 201 Created
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalIODispatch inputReady
+FINE: http-outgoing-0 [ACTIVE(158)] Input ready
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec consumeContent
+FINE: [exchange: 1] Consume content
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalHttpAsyncClient manageConnectionPersistence
+FINE: [exchange: 1] Connection can be kept alive indefinitely
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec responseCompleted
+FINE: [exchange: 1] Response processed
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalHttpAsyncClient releaseConnection
+FINE: [exchange: 1] releasing connection
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl removeAttribute
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][r:r]: Remove attribute http.nio.exchange-handler
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager releaseConnection
+FINE: Releasing connection: [id: http-outgoing-0][route: {}->http://elasticsearch:9200][total kept alive: 0; route allocated: 1 of 10; total allocated: 1 of 30]
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager releaseConnection
+FINE: Connection [id: http-outgoing-0][route: {}->http://elasticsearch:9200] can be kept alive indefinitely
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl setSocketTimeout
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][r:r]: Set timeout 0
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager releaseConnection
+FINE: Connection released: [id: http-outgoing-0][route: {}->http://elasticsearch:9200][total kept alive: 1; route allocated: 1 of 10; total allocated: 1 of 30]
+Jan 31, 2018 10:41:11 PM org.elasticsearch.client.RestClient logResponse
+FINE: request [PUT http://elasticsearch:9200/signup/user/11243] returned [HTTP/1.1 201 Created]
+Jan 31, 2018 10:41:11 PM tracer logResponse
+FINEST: curl -iX PUT 'http://elasticsearch:9200/signup/user/11243' -d '{"firstName":"Malcolm","lastName":"Reynolds","password":"browncoat","emailAddress":"mal@firefly.com","dateOfBirth":15738125603,"id":17297,"userName":"captain","age":0}'
+# HTTP/1.1 201 Created
+# Location: /signup/user/11243
+# content-type: application/json; charset=UTF-8
+# content-length: 158
+#
+# {"_index":"signup","_type":"user","_id":"11243","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":0,"_primary_term":1}
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalIODispatch inputReady
+FINE: http-outgoing-0 [ACTIVE] [content length: 158; pos: 158; completed: true]
+Jan 31, 2018 10:41:11 PM worker.Worker main
+INFO: 2018-01-31 22:41:11.513, DATA: {"firstName":"Hoban","lastName":"Washburne","password":"leaf1","emailAddress":"wash@firefly.com","dateOfBirth":16039317474,"id":17301,"userName":"wash"}
+Jan 31, 2018 10:41:11 PM worker.Worker sendToElasticsearch
+INFO: YEAR: Sun Jul 19 23:15:10 GMT 1970 : Sun Jul 05 15:21:57 GMT 1970 : 0
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec prepare
+FINE: [exchange: 2] start execution
+Jan 31, 2018 10:41:11 PM org.apache.http.client.protocol.RequestAddCookies process
+FINE: CookieSpec selected: default
+Jan 31, 2018 10:41:11 PM org.apache.http.client.protocol.RequestAuthCache doPreemptiveAuth
+FINE: Re-using cached 'basic' auth scheme for http://elasticsearch:9200
+Jan 31, 2018 10:41:11 PM org.apache.http.client.protocol.RequestAuthCache doPreemptiveAuth
+FINE: No credentials for preemptive authentication
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalHttpAsyncClient requestConnection
+FINE: [exchange: 2] Request connection for {}->http://elasticsearch:9200
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager requestConnection
+FINE: Connection request: [route: {}->http://elasticsearch:9200][total kept alive: 1; route allocated: 1 of 10; total allocated: 1 of 30]
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl setSocketTimeout
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][r:r]: Set timeout 0
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager completed
+FINE: Connection leased: [id: http-outgoing-0][route: {}->http://elasticsearch:9200][total kept alive: 0; route allocated: 1 of 10; total allocated: 1 of 30]
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalHttpAsyncClient connectionAllocated
+FINE: [exchange: 2] Connection allocated: CPoolProxy{http-outgoing-0 [ACTIVE]}
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl setAttribute
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][r:r]: Set attribute http.nio.exchange-handler
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalIODispatch requestReady
+FINE: http-outgoing-0 [ACTIVE] Request ready
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl setEvent
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][rw:w]: Event set [w]
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalHttpAsyncClient verifytRoute
+FINE: Connection route already established
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec generateRequest
+FINE: [exchange: 2] Attempt 1 to execute request
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec generateRequest
+FINE: Target auth state: UNCHALLENGED
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec generateRequest
+FINE: Proxy auth state: UNCHALLENGED
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl setSocketTimeout
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][rw:w]: Set timeout 30000
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onRequestSubmitted
+FINE: http-outgoing-0 >> PUT /signup/user/10722 HTTP/1.1
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onRequestSubmitted
+FINE: http-outgoing-0 >> Content-Length: 160
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onRequestSubmitted
+FINE: http-outgoing-0 >> Content-Type: application/json; charset=UTF-8
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onRequestSubmitted
+FINE: http-outgoing-0 >> Host: elasticsearch:9200
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onRequestSubmitted
+FINE: http-outgoing-0 >> Connection: Keep-Alive
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onRequestSubmitted
+FINE: http-outgoing-0 >> User-Agent: Apache-HttpAsyncClient/4.1.2 (Java/1.8.0_111-internal)
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl setEvent
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][rw:w]: Event set [w]
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalIODispatch outputReady
+FINE: http-outgoing-0 [ACTIVE] Output ready
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec produceContent
+FINE: [exchange: 2] produce content
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec requestCompleted
+FINE: [exchange: 2] Request completed
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalIODispatch outputReady
+FINE: http-outgoing-0 [ACTIVE] [content length: 160; pos: 160; completed: true]
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl write
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][rw:w]: 381 bytes written
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "PUT /signup/user/10722 HTTP/1.1[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "Content-Length: 160[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "Content-Type: application/json; charset=UTF-8[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "Host: elasticsearch:9200[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "User-Agent: Apache-HttpAsyncClient/4.1.2 (Java/1.8.0_111-internal)[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "{"firstName":"Hoban","lastName":"Washburne","password":"leaf1","emailAddress":"wash@firefly.com","dateOfBirth":16039317474,"id":17301,"userName":"wash","age":0}"
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalIODispatch requestReady
+FINE: http-outgoing-0 [ACTIVE] Request ready
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl clearEvent
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][r:w]: Event cleared [w]
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl read
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][r:r]: 280 bytes read
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 << "HTTP/1.1 201 Created[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 << "Location: /signup/user/10722[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 << "content-type: application/json; charset=UTF-8[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 << "content-length: 158[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 << "[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 << "{"_index":"signup","_type":"user","_id":"10722","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":0,"_primary_term":1}"
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onResponseReceived
+FINE: http-outgoing-0 << HTTP/1.1 201 Created
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onResponseReceived
+FINE: http-outgoing-0 << Location: /signup/user/10722
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onResponseReceived
+FINE: http-outgoing-0 << content-type: application/json; charset=UTF-8
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onResponseReceived
+FINE: http-outgoing-0 << content-length: 158
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalIODispatch responseReceived
+FINE: http-outgoing-0 [ACTIVE(158)] Response received
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec responseReceived
+FINE: [exchange: 2] Response received HTTP/1.1 201 Created
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalIODispatch inputReady
+FINE: http-outgoing-0 [ACTIVE(158)] Input ready
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec consumeContent
+FINE: [exchange: 2] Consume content
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalHttpAsyncClient manageConnectionPersistence
+FINE: [exchange: 2] Connection can be kept alive indefinitely
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec responseCompleted
+FINE: [exchange: 2] Response processed
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalHttpAsyncClient releaseConnection
+FINE: [exchange: 2] releasing connection
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl removeAttribute
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][r:r]: Remove attribute http.nio.exchange-handler
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager releaseConnection
+FINE: Releasing connection: [id: http-outgoing-0][route: {}->http://elasticsearch:9200][total kept alive: 0; route allocated: 1 of 10; total allocated: 1 of 30]
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager releaseConnection
+FINE: Connection [id: http-outgoing-0][route: {}->http://elasticsearch:9200] can be kept alive indefinitely
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl setSocketTimeout
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][r:r]: Set timeout 0
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager releaseConnection
+FINE: Connection released: [id: http-outgoing-0][route: {}->http://elasticsearch:9200][total kept alive: 1; route allocated: 1 of 10; total allocated: 1 of 30]
+Jan 31, 2018 10:41:11 PM org.elasticsearch.client.RestClient logResponse
+FINE: request [PUT http://elasticsearch:9200/signup/user/10722] returned [HTTP/1.1 201 Created]
+Jan 31, 2018 10:41:11 PM tracer logResponse
+FINEST: curl -iX PUT 'http://elasticsearch:9200/signup/user/10722' -d '{"firstName":"Hoban","lastName":"Washburne","password":"leaf1","emailAddress":"wash@firefly.com","dateOfBirth":16039317474,"id":17301,"userName":"wash","age":0}'
+# HTTP/1.1 201 Created
+# Location: /signup/user/10722
+# content-type: application/json; charset=UTF-8
+# content-length: 158
+#
+# {"_index":"signup","_type":"user","_id":"10722","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":0,"_primary_term":1}
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalIODispatch inputReady
+FINE: http-outgoing-0 [ACTIVE] [content length: 158; pos: 158; completed: true]
+Jan 31, 2018 10:41:11 PM worker.Worker main
+INFO: 2018-01-31 22:41:11.648, DATA: {"firstName":"Kaylee","lastName":"Frye","password":"shiny","emailAddress":"kaylee@firefly.com","dateOfBirth":16646362403,"id":17300,"userName":"xiaomeimei"}
+Jan 31, 2018 10:41:11 PM worker.Worker sendToElasticsearch
+INFO: YEAR: Sun Jul 19 23:15:10 GMT 1970 : Sun Jul 12 15:59:22 GMT 1970 : 0
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec prepare
+FINE: [exchange: 3] start execution
+Jan 31, 2018 10:41:11 PM org.apache.http.client.protocol.RequestAddCookies process
+FINE: CookieSpec selected: default
+Jan 31, 2018 10:41:11 PM org.apache.http.client.protocol.RequestAuthCache doPreemptiveAuth
+FINE: Re-using cached 'basic' auth scheme for http://elasticsearch:9200
+Jan 31, 2018 10:41:11 PM org.apache.http.client.protocol.RequestAuthCache doPreemptiveAuth
+FINE: No credentials for preemptive authentication
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalHttpAsyncClient requestConnection
+FINE: [exchange: 3] Request connection for {}->http://elasticsearch:9200
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager requestConnection
+FINE: Connection request: [route: {}->http://elasticsearch:9200][total kept alive: 1; route allocated: 1 of 10; total allocated: 1 of 30]
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl setSocketTimeout
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][r:r]: Set timeout 0
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager completed
+FINE: Connection leased: [id: http-outgoing-0][route: {}->http://elasticsearch:9200][total kept alive: 0; route allocated: 1 of 10; total allocated: 1 of 30]
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalHttpAsyncClient connectionAllocated
+FINE: [exchange: 3] Connection allocated: CPoolProxy{http-outgoing-0 [ACTIVE]}
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl setAttribute
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][r:r]: Set attribute http.nio.exchange-handler
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl setEvent
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][rw:r]: Event set [w]
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalIODispatch requestReady
+FINE: http-outgoing-0 [ACTIVE] Request ready
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalHttpAsyncClient verifytRoute
+FINE: Connection route already established
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec generateRequest
+FINE: [exchange: 3] Attempt 1 to execute request
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec generateRequest
+FINE: Target auth state: UNCHALLENGED
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec generateRequest
+FINE: Proxy auth state: UNCHALLENGED
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl setSocketTimeout
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][rw:w]: Set timeout 30000
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onRequestSubmitted
+FINE: http-outgoing-0 >> PUT /signup/user/16240 HTTP/1.1
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onRequestSubmitted
+FINE: http-outgoing-0 >> Content-Length: 164
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onRequestSubmitted
+FINE: http-outgoing-0 >> Content-Type: application/json; charset=UTF-8
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onRequestSubmitted
+FINE: http-outgoing-0 >> Host: elasticsearch:9200
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onRequestSubmitted
+FINE: http-outgoing-0 >> Connection: Keep-Alive
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onRequestSubmitted
+FINE: http-outgoing-0 >> User-Agent: Apache-HttpAsyncClient/4.1.2 (Java/1.8.0_111-internal)
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl setEvent
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][rw:w]: Event set [w]
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalIODispatch outputReady
+FINE: http-outgoing-0 [ACTIVE] Output ready
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec produceContent
+FINE: [exchange: 3] produce content
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec requestCompleted
+FINE: [exchange: 3] Request completed
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalIODispatch outputReady
+FINE: http-outgoing-0 [ACTIVE] [content length: 164; pos: 164; completed: true]
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl write
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][rw:w]: 385 bytes written
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "PUT /signup/user/16240 HTTP/1.1[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "Content-Length: 164[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "Content-Type: application/json; charset=UTF-8[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "Host: elasticsearch:9200[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "User-Agent: Apache-HttpAsyncClient/4.1.2 (Java/1.8.0_111-internal)[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "{"firstName":"Kaylee","lastName":"Frye","password":"shiny","emailAddress":"kaylee@firefly.com","dateOfBirth":16646362403,"id":17300,"userName":"xiaomeimei","age":0}"
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalIODispatch requestReady
+FINE: http-outgoing-0 [ACTIVE] Request ready
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl clearEvent
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][r:w]: Event cleared [w]
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl read
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][r:r]: 280 bytes read
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 << "HTTP/1.1 201 Created[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 << "Location: /signup/user/16240[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 << "content-type: application/json; charset=UTF-8[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 << "content-length: 158[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 << "[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 << "{"_index":"signup","_type":"user","_id":"16240","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":0,"_primary_term":1}"
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onResponseReceived
+FINE: http-outgoing-0 << HTTP/1.1 201 Created
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onResponseReceived
+FINE: http-outgoing-0 << Location: /signup/user/16240
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onResponseReceived
+FINE: http-outgoing-0 << content-type: application/json; charset=UTF-8
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onResponseReceived
+FINE: http-outgoing-0 << content-length: 158
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalIODispatch responseReceived
+FINE: http-outgoing-0 [ACTIVE(158)] Response received
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec responseReceived
+FINE: [exchange: 3] Response received HTTP/1.1 201 Created
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalIODispatch inputReady
+FINE: http-outgoing-0 [ACTIVE(158)] Input ready
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec consumeContent
+FINE: [exchange: 3] Consume content
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalHttpAsyncClient manageConnectionPersistence
+FINE: [exchange: 3] Connection can be kept alive indefinitely
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec responseCompleted
+FINE: [exchange: 3] Response processed
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalHttpAsyncClient releaseConnection
+FINE: [exchange: 3] releasing connection
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl removeAttribute
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][r:r]: Remove attribute http.nio.exchange-handler
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager releaseConnection
+FINE: Releasing connection: [id: http-outgoing-0][route: {}->http://elasticsearch:9200][total kept alive: 0; route allocated: 1 of 10; total allocated: 1 of 30]
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager releaseConnection
+FINE: Connection [id: http-outgoing-0][route: {}->http://elasticsearch:9200] can be kept alive indefinitely
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl setSocketTimeout
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][r:r]: Set timeout 0
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager releaseConnection
+FINE: Connection released: [id: http-outgoing-0][route: {}->http://elasticsearch:9200][total kept alive: 1; route allocated: 1 of 10; total allocated: 1 of 30]
+Jan 31, 2018 10:41:11 PM org.elasticsearch.client.RestClient logResponse
+FINE: request [PUT http://elasticsearch:9200/signup/user/16240] returned [HTTP/1.1 201 Created]
+Jan 31, 2018 10:41:11 PM tracer logResponse
+FINEST: curl -iX PUT 'http://elasticsearch:9200/signup/user/16240' -d '{"firstName":"Kaylee","lastName":"Frye","password":"shiny","emailAddress":"kaylee@firefly.com","dateOfBirth":16646362403,"id":17300,"userName":"xiaomeimei","age":0}'
+# HTTP/1.1 201 Created
+# Location: /signup/user/16240
+# content-type: application/json; charset=UTF-8
+# content-length: 158
+#
+# {"_index":"signup","_type":"user","_id":"16240","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":0,"_primary_term":1}
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalIODispatch inputReady
+FINE: http-outgoing-0 [ACTIVE] [content length: 158; pos: 158; completed: true]
+Jan 31, 2018 10:41:11 PM worker.Worker main
+INFO: 2018-01-31 22:41:11.9, DATA: {"firstName":"Jayne","lastName":"Cobb","password":"vera1","emailAddress":"jayne@firefly.com","dateOfBirth":16134615203,"id":17299,"userName":"heroofcanton"}
+Jan 31, 2018 10:41:11 PM worker.Worker sendToElasticsearch
+INFO: YEAR: Sun Jul 19 23:15:10 GMT 1970 : Mon Jul 06 17:50:15 GMT 1970 : 0
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec prepare
+FINE: [exchange: 4] start execution
+Jan 31, 2018 10:41:11 PM org.apache.http.client.protocol.RequestAddCookies process
+FINE: CookieSpec selected: default
+Jan 31, 2018 10:41:11 PM org.apache.http.client.protocol.RequestAuthCache doPreemptiveAuth
+FINE: Re-using cached 'basic' auth scheme for http://elasticsearch:9200
+Jan 31, 2018 10:41:11 PM org.apache.http.client.protocol.RequestAuthCache doPreemptiveAuth
+FINE: No credentials for preemptive authentication
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalHttpAsyncClient requestConnection
+FINE: [exchange: 4] Request connection for {}->http://elasticsearch:9200
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager requestConnection
+FINE: Connection request: [route: {}->http://elasticsearch:9200][total kept alive: 1; route allocated: 1 of 10; total allocated: 1 of 30]
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl setSocketTimeout
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][r:r]: Set timeout 0
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager completed
+FINE: Connection leased: [id: http-outgoing-0][route: {}->http://elasticsearch:9200][total kept alive: 0; route allocated: 1 of 10; total allocated: 1 of 30]
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalHttpAsyncClient connectionAllocated
+FINE: [exchange: 4] Connection allocated: CPoolProxy{http-outgoing-0 [ACTIVE]}
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl setAttribute
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][r:r]: Set attribute http.nio.exchange-handler
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl setEvent
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][rw:r]: Event set [w]
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalIODispatch requestReady
+FINE: http-outgoing-0 [ACTIVE] Request ready
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalHttpAsyncClient verifytRoute
+FINE: Connection route already established
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec generateRequest
+FINE: [exchange: 4] Attempt 1 to execute request
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec generateRequest
+FINE: Target auth state: UNCHALLENGED
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec generateRequest
+FINE: Proxy auth state: UNCHALLENGED
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl setSocketTimeout
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][rw:w]: Set timeout 30000
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onRequestSubmitted
+FINE: http-outgoing-0 >> PUT /signup/user/10803 HTTP/1.1
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onRequestSubmitted
+FINE: http-outgoing-0 >> Content-Length: 164
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onRequestSubmitted
+FINE: http-outgoing-0 >> Content-Type: application/json; charset=UTF-8
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onRequestSubmitted
+FINE: http-outgoing-0 >> Host: elasticsearch:9200
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onRequestSubmitted
+FINE: http-outgoing-0 >> Connection: Keep-Alive
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onRequestSubmitted
+FINE: http-outgoing-0 >> User-Agent: Apache-HttpAsyncClient/4.1.2 (Java/1.8.0_111-internal)
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl setEvent
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][rw:w]: Event set [w]
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalIODispatch outputReady
+FINE: http-outgoing-0 [ACTIVE] Output ready
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec produceContent
+FINE: [exchange: 4] produce content
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec requestCompleted
+FINE: [exchange: 4] Request completed
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalIODispatch outputReady
+FINE: http-outgoing-0 [ACTIVE] [content length: 164; pos: 164; completed: true]
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl write
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][rw:w]: 385 bytes written
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "PUT /signup/user/10803 HTTP/1.1[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "Content-Length: 164[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "Content-Type: application/json; charset=UTF-8[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "Host: elasticsearch:9200[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "User-Agent: Apache-HttpAsyncClient/4.1.2 (Java/1.8.0_111-internal)[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "{"firstName":"Jayne","lastName":"Cobb","password":"vera1","emailAddress":"jayne@firefly.com","dateOfBirth":16134615203,"id":17299,"userName":"heroofcanton","age":0}"
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl read
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][rw:rw]: 280 bytes read
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 << "HTTP/1.1 201 Created[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 << "Location: /signup/user/10803[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 << "content-type: application/json; charset=UTF-8[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 << "content-length: 158[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 << "[\r][\n]"
+Jan 31, 2018 10:41:11 PM org.apache.http.wire wire
+FINE: http-outgoing-0 << "{"_index":"signup","_type":"user","_id":"10803","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":0,"_primary_term":1}"
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onResponseReceived
+FINE: http-outgoing-0 << HTTP/1.1 201 Created
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onResponseReceived
+FINE: http-outgoing-0 << Location: /signup/user/10803
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onResponseReceived
+FINE: http-outgoing-0 << content-type: application/json; charset=UTF-8
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onResponseReceived
+FINE: http-outgoing-0 << content-length: 158
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalIODispatch responseReceived
+FINE: http-outgoing-0 [ACTIVE(158)] Response received
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec responseReceived
+FINE: [exchange: 4] Response received HTTP/1.1 201 Created
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalIODispatch inputReady
+FINE: http-outgoing-0 [ACTIVE(158)] Input ready
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec consumeContent
+FINE: [exchange: 4] Consume content
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalHttpAsyncClient manageConnectionPersistence
+FINE: [exchange: 4] Connection can be kept alive indefinitely
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec responseCompleted
+FINE: [exchange: 4] Response processed
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalHttpAsyncClient releaseConnection
+FINE: [exchange: 4] releasing connection
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl removeAttribute
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][rw:rw]: Remove attribute http.nio.exchange-handler
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager releaseConnection
+FINE: Releasing connection: [id: http-outgoing-0][route: {}->http://elasticsearch:9200][total kept alive: 0; route allocated: 1 of 10; total allocated: 1 of 30]
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager releaseConnection
+FINE: Connection [id: http-outgoing-0][route: {}->http://elasticsearch:9200] can be kept alive indefinitely
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl setSocketTimeout
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][rw:rw]: Set timeout 0
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager releaseConnection
+FINE: Connection released: [id: http-outgoing-0][route: {}->http://elasticsearch:9200][total kept alive: 1; route allocated: 1 of 10; total allocated: 1 of 30]
+Jan 31, 2018 10:41:11 PM org.elasticsearch.client.RestClient logResponse
+FINE: request [PUT http://elasticsearch:9200/signup/user/10803] returned [HTTP/1.1 201 Created]
+Jan 31, 2018 10:41:11 PM tracer logResponse
+FINEST: curl -iX PUT 'http://elasticsearch:9200/signup/user/10803' -d '{"firstName":"Jayne","lastName":"Cobb","password":"vera1","emailAddress":"jayne@firefly.com","dateOfBirth":16134615203,"id":17299,"userName":"heroofcanton","age":0}'
+# HTTP/1.1 201 Created
+# Location: /signup/user/10803
+# content-type: application/json; charset=UTF-8
+# content-length: 158
+#
+# {"_index":"signup","_type":"user","_id":"10803","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":0,"_primary_term":1}
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalIODispatch inputReady
+FINE: http-outgoing-0 [ACTIVE] [content length: 158; pos: 158; completed: true]
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalIODispatch requestReady
+FINE: http-outgoing-0 [ACTIVE] Request ready
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl clearEvent
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][r:rw]: Event cleared [w]
+Jan 31, 2018 10:41:11 PM worker.Worker main
+INFO: 2018-01-31 22:41:11.976, DATA: {"firstName":"Zoe","lastName":"Washburn","password":"serenity","emailAddress":"zoe@firefly.com","dateOfBirth":16224212003,"id":17298,"userName":"firstmate"}
+Jan 31, 2018 10:41:11 PM worker.Worker sendToElasticsearch
+INFO: YEAR: Sun Jul 19 23:15:10 GMT 1970 : Tue Jul 07 18:43:32 GMT 1970 : 0
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec prepare
+FINE: [exchange: 5] start execution
+Jan 31, 2018 10:41:11 PM org.apache.http.client.protocol.RequestAddCookies process
+FINE: CookieSpec selected: default
+Jan 31, 2018 10:41:11 PM org.apache.http.client.protocol.RequestAuthCache doPreemptiveAuth
+FINE: Re-using cached 'basic' auth scheme for http://elasticsearch:9200
+Jan 31, 2018 10:41:11 PM org.apache.http.client.protocol.RequestAuthCache doPreemptiveAuth
+FINE: No credentials for preemptive authentication
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalHttpAsyncClient requestConnection
+FINE: [exchange: 5] Request connection for {}->http://elasticsearch:9200
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager requestConnection
+FINE: Connection request: [route: {}->http://elasticsearch:9200][total kept alive: 1; route allocated: 1 of 10; total allocated: 1 of 30]
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl setSocketTimeout
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][r:rw]: Set timeout 0
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager completed
+FINE: Connection leased: [id: http-outgoing-0][route: {}->http://elasticsearch:9200][total kept alive: 0; route allocated: 1 of 10; total allocated: 1 of 30]
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalHttpAsyncClient connectionAllocated
+FINE: [exchange: 5] Connection allocated: CPoolProxy{http-outgoing-0 [ACTIVE]}
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl setAttribute
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][r:rw]: Set attribute http.nio.exchange-handler
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl setEvent
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][rw:rw]: Event set [w]
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalIODispatch requestReady
+FINE: http-outgoing-0 [ACTIVE] Request ready
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.InternalHttpAsyncClient verifytRoute
+FINE: Connection route already established
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec generateRequest
+FINE: [exchange: 5] Attempt 1 to execute request
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec generateRequest
+FINE: Target auth state: UNCHALLENGED
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.client.MainClientExec generateRequest
+FINE: Proxy auth state: UNCHALLENGED
+Jan 31, 2018 10:41:11 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl setSocketTimeout
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][rw:w]: Set timeout 30000
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onRequestSubmitted
+FINE: http-outgoing-0 >> PUT /signup/user/17625 HTTP/1.1
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onRequestSubmitted
+FINE: http-outgoing-0 >> Content-Length: 164
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onRequestSubmitted
+FINE: http-outgoing-0 >> Content-Type: application/json; charset=UTF-8
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onRequestSubmitted
+FINE: http-outgoing-0 >> Host: elasticsearch:9200
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onRequestSubmitted
+FINE: http-outgoing-0 >> Connection: Keep-Alive
+Jan 31, 2018 10:41:11 PM org.apache.http.headers onRequestSubmitted
+FINE: http-outgoing-0 >> User-Agent: Apache-HttpAsyncClient/4.1.2 (Java/1.8.0_111-internal)
+Jan 31, 2018 10:41:12 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl setEvent
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][rw:w]: Event set [w]
+Jan 31, 2018 10:41:12 PM org.apache.http.impl.nio.client.InternalIODispatch outputReady
+FINE: http-outgoing-0 [ACTIVE] Output ready
+Jan 31, 2018 10:41:12 PM org.apache.http.impl.nio.client.MainClientExec produceContent
+FINE: [exchange: 5] produce content
+Jan 31, 2018 10:41:12 PM org.apache.http.impl.nio.client.MainClientExec requestCompleted
+FINE: [exchange: 5] Request completed
+Jan 31, 2018 10:41:12 PM org.apache.http.impl.nio.client.InternalIODispatch outputReady
+FINE: http-outgoing-0 [ACTIVE] [content length: 164; pos: 164; completed: true]
+Jan 31, 2018 10:41:12 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl write
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][rw:w]: 385 bytes written
+Jan 31, 2018 10:41:12 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "PUT /signup/user/17625 HTTP/1.1[\r][\n]"
+Jan 31, 2018 10:41:12 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "Content-Length: 164[\r][\n]"
+Jan 31, 2018 10:41:12 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "Content-Type: application/json; charset=UTF-8[\r][\n]"
+Jan 31, 2018 10:41:12 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "Host: elasticsearch:9200[\r][\n]"
+Jan 31, 2018 10:41:12 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+Jan 31, 2018 10:41:12 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "User-Agent: Apache-HttpAsyncClient/4.1.2 (Java/1.8.0_111-internal)[\r][\n]"
+Jan 31, 2018 10:41:12 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "[\r][\n]"
+Jan 31, 2018 10:41:12 PM org.apache.http.wire wire
+FINE: http-outgoing-0 >> "{"firstName":"Zoe","lastName":"Washburn","password":"serenity","emailAddress":"zoe@firefly.com","dateOfBirth":16224212003,"id":17298,"userName":"firstmate","age":0}"
+Jan 31, 2018 10:41:12 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl read
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][rw:rw]: 280 bytes read
+Jan 31, 2018 10:41:12 PM org.apache.http.wire wire
+FINE: http-outgoing-0 << "HTTP/1.1 201 Created[\r][\n]"
+Jan 31, 2018 10:41:12 PM org.apache.http.wire wire
+FINE: http-outgoing-0 << "Location: /signup/user/17625[\r][\n]"
+Jan 31, 2018 10:41:12 PM org.apache.http.wire wire
+FINE: http-outgoing-0 << "content-type: application/json; charset=UTF-8[\r][\n]"
+Jan 31, 2018 10:41:12 PM org.apache.http.wire wire
+FINE: http-outgoing-0 << "content-length: 158[\r][\n]"
+Jan 31, 2018 10:41:12 PM org.apache.http.wire wire
+FINE: http-outgoing-0 << "[\r][\n]"
+Jan 31, 2018 10:41:12 PM org.apache.http.wire wire
+FINE: http-outgoing-0 << "{"_index":"signup","_type":"user","_id":"17625","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":1,"_primary_term":1}"
+Jan 31, 2018 10:41:12 PM org.apache.http.headers onResponseReceived
+FINE: http-outgoing-0 << HTTP/1.1 201 Created
+Jan 31, 2018 10:41:12 PM org.apache.http.headers onResponseReceived
+FINE: http-outgoing-0 << Location: /signup/user/17625
+Jan 31, 2018 10:41:12 PM org.apache.http.headers onResponseReceived
+FINE: http-outgoing-0 << content-type: application/json; charset=UTF-8
+Jan 31, 2018 10:41:12 PM org.apache.http.headers onResponseReceived
+FINE: http-outgoing-0 << content-length: 158
+Jan 31, 2018 10:41:12 PM org.apache.http.impl.nio.client.InternalIODispatch responseReceived
+FINE: http-outgoing-0 [ACTIVE(158)] Response received
+Jan 31, 2018 10:41:12 PM org.apache.http.impl.nio.client.MainClientExec responseReceived
+FINE: [exchange: 5] Response received HTTP/1.1 201 Created
+Jan 31, 2018 10:41:12 PM org.apache.http.impl.nio.client.InternalIODispatch inputReady
+FINE: http-outgoing-0 [ACTIVE(158)] Input ready
+Jan 31, 2018 10:41:12 PM org.apache.http.impl.nio.client.MainClientExec consumeContent
+FINE: [exchange: 5] Consume content
+Jan 31, 2018 10:41:12 PM org.apache.http.impl.nio.client.InternalHttpAsyncClient manageConnectionPersistence
+FINE: [exchange: 5] Connection can be kept alive indefinitely
+Jan 31, 2018 10:41:12 PM org.apache.http.impl.nio.client.MainClientExec responseCompleted
+FINE: [exchange: 5] Response processed
+Jan 31, 2018 10:41:12 PM org.apache.http.impl.nio.client.InternalHttpAsyncClient releaseConnection
+FINE: [exchange: 5] releasing connection
+Jan 31, 2018 10:41:12 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl removeAttribute
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][rw:rw]: Remove attribute http.nio.exchange-handler
+Jan 31, 2018 10:41:12 PM org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager releaseConnection
+FINE: Releasing connection: [id: http-outgoing-0][route: {}->http://elasticsearch:9200][total kept alive: 0; route allocated: 1 of 10; total allocated: 1 of 30]
+Jan 31, 2018 10:41:12 PM org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager releaseConnection
+FINE: Connection [id: http-outgoing-0][route: {}->http://elasticsearch:9200] can be kept alive indefinitely
+Jan 31, 2018 10:41:12 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl setSocketTimeout
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][rw:rw]: Set timeout 0
+Jan 31, 2018 10:41:12 PM org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager releaseConnection
+FINE: Connection released: [id: http-outgoing-0][route: {}->http://elasticsearch:9200][total kept alive: 1; route allocated: 1 of 10; total allocated: 1 of 30]
+Jan 31, 2018 10:41:12 PM org.elasticsearch.client.RestClient logResponse
+FINE: request [PUT http://elasticsearch:9200/signup/user/17625] returned [HTTP/1.1 201 Created]
+Jan 31, 2018 10:41:12 PM tracer logResponse
+FINEST: curl -iX PUT 'http://elasticsearch:9200/signup/user/17625' -d '{"firstName":"Zoe","lastName":"Washburn","password":"serenity","emailAddress":"zoe@firefly.com","dateOfBirth":16224212003,"id":17298,"userName":"firstmate","age":0}'
+# HTTP/1.1 201 Created
+# Location: /signup/user/17625
+# content-type: application/json; charset=UTF-8
+# content-length: 158
+#
+# {"_index":"signup","_type":"user","_id":"17625","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":1,"_primary_term":1}
+Jan 31, 2018 10:41:12 PM org.apache.http.impl.nio.client.InternalIODispatch inputReady
+FINE: http-outgoing-0 [ACTIVE] [content length: 158; pos: 158; completed: true]
+Jan 31, 2018 10:41:12 PM org.apache.http.impl.nio.client.InternalIODispatch requestReady
+FINE: http-outgoing-0 [ACTIVE] Request ready
+Jan 31, 2018 10:41:12 PM org.apache.http.impl.nio.conn.ManagedNHttpClientConnectionImpl clearEvent
+FINE: http-outgoing-0 172.19.0.2:52952<->172.19.0.3:9200[ACTIVE][r:rw]: Event cleared [w]

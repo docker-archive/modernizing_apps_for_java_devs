@@ -1,0 +1,101 @@
+version: "3.3"
+
+services:
+
+# application
+  database:
+    build:
+      context: ./database
+    image: registrationdb
+    # set default mysql root password, change as needed
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    # Expose port 3306 to host. Not for the application but
+    # handy to inspect the database from the host machine.
+    ports:
+      - "3306:3306" 
+    networks:
+      - back-tier
+
+  webserver:
+    build: 
+      context: ./appserver
+    image: registration
+    depends_on:
+      - database
+    # open ports for tomcat and remote debugging
+    ports:
+      - "8080:8080" 
+      - "8000:8000"
+    networks:
+      - front-tier
+      - back-tier
+
+  messageservice:
+    build:
+      context: ./messageservice
+    image: messageservice
+    depends_on:
+      - redis
+    ports:
+      - "8090:8090"
+    networks: 
+      - back-tier
+
+  worker:
+    build:
+      context: ./worker
+    image: worker
+    volumes:
+      - ./worker/logs:/app/logs
+    networks: 
+      - back-tier
+      - elk
+
+  redis:
+    image: redis
+    container_name: redis
+    ports: 
+      - "6379:6379"
+    networks:
+      - back-tier
+
+#logging
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.1.2
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
+    networks: 
+      - elk
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana-oss:6.1.2
+    ports:
+      - "5601:5601"
+    networks: 
+      - elk
+    depends_on:
+      - elasticsearch
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash-oss:6.1.2
+    volumes:
+      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro
+      - ./logstash/pipeline:/usr/share/logstash/pipeline:ro
+    environment:
+      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+    ports:
+      - "5000:5000"
+    networks:
+      - elk
+    depends_on:
+      - elasticsearch
+
+networks:
+  front-tier:
+  back-tier:
+  elk:
+ 

@@ -1,0 +1,57 @@
+version: "3.3"
+
+services:
+
+  database:
+    build:
+      context: ./database
+    image: registrationdb
+    # set default mysql root password, change as needed
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    # Expose port 3306 to host. Not for the application but
+    # handy to inspect the database from the host machine.
+    ports:
+      - "3306:3306" 
+    networks:
+      - back-tier
+
+  webserver:
+    build: 
+      context: ./appserver
+    image: registration
+    ports:
+      - "8080:8080" 
+      - "8000:8000"
+    networks:
+      - front-tier
+      - back-tier
+
+  messageservice:
+    build:
+      context: ./messageservice
+    image: messageservice
+    ports:
+      - "8090:8090"
+    networks: 
+      - back-tier
+
+  worker:
+    build:
+      context: ./worker
+    image: worker
+    networks: 
+      - back-tier
+
+  redis:
+    image: redis
+    container_name: redis
+    ports: 
+      - "6379:6379"
+    networks:
+      - back-tier
+
+networks:
+  front-tier:
+  back-tier:
+ 
