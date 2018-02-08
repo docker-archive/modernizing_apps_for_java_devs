@@ -1,4 +1,4 @@
-package com.docker.register.Service.config;
+package com.docker.register.service.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

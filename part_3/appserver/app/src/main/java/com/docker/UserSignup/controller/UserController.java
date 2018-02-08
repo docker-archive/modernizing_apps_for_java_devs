@@ -55,7 +55,6 @@ public class UserController {
 			RestTemplate rt = new RestTemplate();
 			Long id = new Long(new Random().nextInt(10000)+10000);
 			user.setId(id);
-			System.out.println(user.getDateOfBirth());
 			try {
 				rt.postForObject(uri, user, String.class);
 			} catch(Exception e) {
