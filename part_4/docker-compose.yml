@@ -10,8 +10,7 @@ services:
     # set default mysql root password, change as needed
     environment:
       MYSQL_ROOT_PASSWORD: password
-    # Expose port 3306 to host. Not for the application but
-    # handy to inspect the database from the host machine.
+    # Expose port 3306 to host. 
     ports:
       - "3306:3306" 
     networks:

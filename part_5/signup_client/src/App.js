@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import logo from './logo.svg';
 import './App.css';
+import './bootstrap-united.css';
 
 class App extends Component {
 
@@ -21,8 +22,6 @@ class App extends Component {
   }
 
   onChange = (e) => {
-    // Because we named the inputs to match their corresponding values in state, it's
-    // super easy to update the state
     const state = this.state
     state[e.target.name] = e.target.value;
     this.setState(state);
@@ -30,7 +29,6 @@ class App extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    // get our form data out of state
     const { id, userName, password, firstName, lastName, dateOfBirth, emailAddress} = this.state;
 
     axios.post('http://localhost:8090/user', { id, userName, password, firstName, lastName, dateOfBirth, emailAddress })
@@ -55,33 +53,62 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Welcome to Signup</h1>
         </header>
-        <p className="App-intro">
-          Signup
-        </p>
-        <div>
-          <form onSubmit={this.onSubmit} id="form2">
-            <label htmlFor="userName">User Name</label>
-            <input type="text" name="userName" value={userName} onChange={this.onChange} />
-            <br/>
-            <label htmlFor="password">Password</label>
-            <input type="password" name="password" value={password} onChange={this.onChange} />
-            <br/>
-            <label htmlFor="firstName">First Name</label>
-            <input type="text" name="firstName" value={firstName} onChange={this.onChange} />
-            <br/>
-            <label htmlFor="lastName">Last Name</label>
-            <input type="text" name="lastName" value={lastName} onChange={this.onChange} />
-            <br/>
-            <label htmlFor="dateOfBirth">Date of Birth</label>
-            <input type="date" name="dateOfBirth" value={dateOfBirth} onChange={this.onChange} />
-            <br/>
-            <label htmlFor="emailAddress">Email</label>
-            <input type="text" name="emailAddress" value={emailAddress} onChange={this.onChange} />
-            <br/>
-            <input type="hidden" name="id" value={id} onChange={this.onChange} />
-            <button type="submit" className="mb-4 btn btn-primary">Submit</button>
-          </form>
-        </div>  
+        <div></div>
+      <div>
+      <div class="col-lg-6 col-lg-offset-3">
+		    <div class="well">
+			    <div class="container">
+				    <div class="row">
+					    <div class="col-lg-6">
+                <form onSubmit={this.onSubmit} id="form2" class="bs-example form-horizontal" commandName="user">
+                  <fieldset>
+								    <legend>Signup</legend> 
+
+                      <div class="form-group">
+                        <label htmlFor="userName" class="col-lg-3 control-label">User Name </label>
+                        <input type="text" name="userName" value={userName} onChange={this.onChange} class="col-lg-6" />
+
+                      </div>
+
+                      <div class="form-group">
+                        <label htmlFor="password" class="col-lg-3 control-label">Password</label>
+                        <input type="password" name="password" value={password} onChange={this.onChange} class="col-lg-6" />
+                      </div>  
+                    
+                      <div class="form-group">
+                        <label htmlFor="firstName" class="col-lg-3 control-label">First Name</label>
+                          <input type="text" name="firstName" value={firstName} onChange={this.onChange} class="col-lg-6" />
+                      </div>
+
+                      <div class="form-group">
+                        <label htmlFor="lastName" class="col-lg-3 control-label">Last Name</label>
+                          <input type="text" name="lastName" value={lastName} onChange={this.onChange} class="col-lg-6"/>
+                      </div>
+
+                      <div class="form-group">
+                        <label htmlFor="dateOfBirth" class="col-lg-3 control-label">Date of Birth</label>
+                          <input type="date" name="dateOfBirth" value={dateOfBirth} onChange={this.onChange} class="col-lg-6"/>
+                      </div>
+
+                      <div class="form-group">
+                        <label htmlFor="emailAddress" class="col-lg-3 control-label">Email</label>
+                          <input type="text" name="emailAddress" value={emailAddress} onChange={this.onChange} class="col-lg-6"/>
+                      </div>
+            
+                      <input type="hidden" name="id" value={id} onChange={this.onChange} />
+                      <div class="btn-toolbar">
+                        <button class="btn btn-default">Cancel</button>
+                      
+                        <button type="submit" className="btn btn-primary">Submit</button>
+                      </div>
+                  </fieldset>
+                </form>
+              </div>  
+            </div>  
+          </div>  
+        </div>    
+      </div>  
+      </div>
       </div>
     );
   }

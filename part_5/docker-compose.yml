@@ -8,11 +8,8 @@ services:
       context: ./database
     image: registrationdb
     container_name: registrationdb
-    # set default mysql root password, change as needed
     environment:
       MYSQL_ROOT_PASSWORD: password
-    # Expose port 3306 to host. Not for the application but
-    # handy to inspect the database from the host machine.
     ports:
       - "3306:3306" 
     networks:
@@ -25,13 +22,22 @@ services:
     container_name: webserver
     depends_on:
       - database
-    # open ports for tomcat and remote debugging
     ports:
       - "8080:8080" 
       - "8000:8000"
     networks:
       - front-tier
       - back-tier
+
+  js_client:
+    build:
+      context: ./signup_client
+    image: js_client
+    container_name: js_client
+    ports:
+      - "80:80"
+    networks: 
+      - front-tier
 
   messageservice:
     build:
