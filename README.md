@@ -10,7 +10,9 @@ This process follows these steps to migrate to a containers
 * Add extra services to add value to the application.
 * Test the code.
 
-## Containerizing Application
+The repository follows the video series which is presented in 5 parts.
+
+## Containerizing Application (Part 2)
 
 As a first step, containerizing the application without changing existing code let's us test the concept of migrating the application to a container architecture. I'll do this by building the application from the source code and deploying it in an application server.  The code for containerizing the application can be found in the [part_2](./part_2) directory. Additionally, I'll configure and deploy the database.
 
@@ -145,7 +147,7 @@ Browse to [http://localhost:8080/Signup](http://localhost:8080/Signup) to try ou
 
 ![signup client](./images/signup.png)
 
-## Adding Services
+## Adding Services (Part 3)
 
 The original application is running in containers. The application is now reproducible and portable. If I have to a a change, such as updating the application server or Java version, I can simply replace the base image in the Dockerfile and build a new image. I can roll back to the previous images if necessary.
 
@@ -231,7 +233,7 @@ To run the application:
 ```
 $ docker-compose up
 ```
-If you fill out the form, you'll see logging output similar to this in the terminal:
+Browse to the application, if you fill out the form there won't be a noticeable change but you'll see logging output similar to this in the terminal:
 
         worker            | # HTTP/1.1 201 Created
         worker            | # Location: /signup/user/12425
@@ -266,18 +268,100 @@ If you fill out the form, you'll see logging output similar to this in the termi
         registrationdb    | 2018-02-08T12:50:36.027838Z 0 [Note] InnoDB: page_cleaner: 1000ms intended loop took 26111086ms. The settings might not be optimal. (flushed=0 and evicted=0, during the time.)
         registrationdb    | 2018-02-08T17:15:20.001749Z 0 [Note] InnoDB: page_cleaner: 1000ms intended loop took 2325445ms. The settings might not be optimal. (flushed=0 and evicted=0, during the time.)
 
-
-
+The output shows the registration app writing the data to Redis and the worker pulling the data and writing it to MySQL.
 
 ## Adding Monitoring and Logging
 
+One of the advantages of splitting out a feature into a separate service is that it makes it easier to add new features. In part 4, I'll take advantage of the new service to implement logging and monitoring.
+
+I'll implement Elasticsearch and Kibana to collect and visualize data from the application. To gather the data for the reporting database in Elasticsearch, I’ve added code to the worker that listens to events published by the web application. The analytics worker receives the data and saves it in Elasticsearch which is running in Docker container. I’ve chosen Elasticsearch because it can be clustered across multiple containers for redundancy and it has Kibana, which is an excellent front-end for analytics.
+
+I’m not making changes to the application or the registration microservice, so I can just add new services for Elasticsearch and Kibana in the Docker Compose file. One of the features of Docker is that Docker Compose can incrementally upgrade an application. 
+
+```
+#logging
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.1.2
+    container_name: elasticsearch
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
+    networks: 
+      - elk
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana-oss:6.1.2
+    container_name: kibana
+    ports:
+      - "5601:5601"
+    networks: 
+      - elk
+    depends_on:
+      - elasticsearch
+```
+
+It won’t replace running containers if their definition matches the service in the Docker Compose file. Since the worker service has been updated docker-compose up -d will run the containers for the Elasticsearch, Kibana and the message handler. It will leave the other containers running as is,letting me add new features without taking the application offline.
 
 
 
-## Iterating on the Client
+To run the example:
+```
+$ docker-compose up -d
+```
 
+To make the example more visually interesting, I added code to calculate the age of the person based on their birthday and write that to Elasticsearch. To test it out, I wrote a small shell script that posts the user data to the service to populate the database.
+```
+$ ./firefly_data.sh
+```
+Now, I can use Kibana to index the data and look at the data.
 
+![data](./images/kibana6.png)
 
+I can then make a chart of the character's ages using a Kibana visualization.
 
-## Deploying to Test
+![chart](./images/kibana7.png)
 
+## Iterating on the Client (Part 5)
+
+Another benefit adding the messaging service is that it's now possible to update the client without having to rebuild the application. The original application used Java Server Pages for the client UI which is compiled along with the servlet. The message service let's me write another client in Javascript.
+
+I'm using React.js along with Bootstrap to write the new client interface. React is a popular Javascript framework that has many built in features such as the calendar widget in the form fields. In addition, Bootstrap is a well known CSS library used for responsive web pages. One advantage is that updating the client no longer needs a Java developer and can be done by a front end developer. 
+
+I built the client using Node.js and deployed it to Nginx using a multi-stage build using the same pattern that I used with the orginal application.
+
+```
+FROM node:latest AS build-deps
+WORKDIR /usr/src/signup_client
+COPY package.json yarn.lock ./
+RUN yarn
+COPY . ./
+RUN yarn build
+
+FROM nginx:alpine
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build-deps /usr/src/signup_client/build/ /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+```
+
+I then added it to the Compose file and brought it up with the `docker-compose up -d` command.
+
+```
+  js_client:
+    build:
+      context: ./signup_client
+    image: js_client
+    container_name: js_client
+    ports:
+      - "80:80"
+    networks: 
+      - front-tier
+```
+I can sign up a new user with the client.
+![javascript cleint](./images/js_client_interface.png)
+
+And login from the orginal client interface.
+
+![java client login](./images/user_login.png)

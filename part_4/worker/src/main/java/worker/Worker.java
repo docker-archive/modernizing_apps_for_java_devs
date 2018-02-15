@@ -9,6 +9,7 @@ import java.util.logging.Logger;
 import java.util.Map;
 import java.util.Collections;
 import java.util.Random;
+import java.util.Calendar;
 
 import org.json.JSONObject;
 
@@ -65,13 +66,13 @@ class Worker {
   static void sendToElasticsearch(RestClient restClient, JSONObject data, Logger LOGGER) {
     Map<String, String> params = Collections.emptyMap();
     String index = "/signup/user/" + new Long(new Random().nextInt(10000)+10000);
+    // calculate age
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
-    Date ffyear = new Date(new Timestamp(17277310770000L).getTime()); 
-    String fireflyYear = sdf.format(ffyear);
+    Date currentDate = new Timestamp(System.currentTimeMillis());
+    String currentYear = sdf.format(currentDate);
     Date bday = new Date(new Timestamp(data.getLong("dateOfBirth") * 1000).getTime());
     String dob = sdf.format(bday);
-    Long age = Long.parseLong(fireflyYear) - Long.parseLong(dob);  
-    LOGGER.info("YEAR: " + ffyear.toString() + " : " + bday.toString() + " : " + age );
+    Long age = Long.parseLong(currentYear) - Long.parseLong(dob);  
     data.put("age", age);
     StringEntity entity = new StringEntity(data.toString(), ContentType.APPLICATION_JSON);
     try {

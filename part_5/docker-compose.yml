@@ -49,6 +49,7 @@ services:
     ports:
       - "8090:8090"
     networks: 
+      - front-tier 
       - back-tier
 
   worker:

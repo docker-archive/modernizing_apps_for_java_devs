@@ -30,8 +30,8 @@ class App extends Component {
   onSubmit = (e) => {
     e.preventDefault();
     const { id, userName, password, firstName, lastName, dateOfBirth, emailAddress} = this.state;
-
-    axios.post('http://localhost:8090/user', { id, userName, password, firstName, lastName, dateOfBirth, emailAddress })
+    http://messageservice:8090/user
+    axios.post('http://messageservice:8090/user', { id, userName, password, firstName, lastName, dateOfBirth, emailAddress })
       // .then((result) => {
         //access the results here....
         .then(function (response) {
