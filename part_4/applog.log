@@ -1,8 +1,0 @@
-2015-11-16 03:44:41,322 ERROR: [MyApplication.Internal.Client.MyApplicationClient] Application callback encountered an error, Thing Id: '293377143', Http Status Code: 'NotFound', Response Content: ''  
-2015-11-16 08:11:55,105 ERROR: [MyApplication.Internal.Client.MyApplicationClient] Application callback encountered an error, Thing Id: '303350367', Http Status Code: 'NotFound', Response Content: ''  
-2015-11-16 09:41:44,914 WARN : [Auther.Internal.Api.Filters.AutherApiAuthorizeAttribute] OnAuthorization - Token is Invalid or Expired, Controller: 'Client', Action: 'Get' System.Security.SecurityException: Token is expired  
-   at AwesomeCorp.JWT.TokenEncoding.TokenEncoder.DecodeWithValidation(String input)
-   at Auther.Internal.Api.Filters.AutherApiAuthorizeAttribute.OnAuthorization(HttpActionContext actionContext)
-2015-11-16 13:39:34,199 ERROR: [MyApplication.Internal.Client.MyApplicationClient] Conflict: ErrorDuplicateRecord: Duplicate member reference;  
-2015-11-16 13:46:52,113 ERROR: [MyApplication.Internal.Client.MyApplicationClient] Application callback encountered an error, Thing Id: '293326249', Http Status Code: 'NotFound', Response Content: ''  
-2015-11-16 22:54:31,958 ERROR: [MyApplication.Internal.Client.MyApplicationClient] Application callback encountered an error, Thing Id: '303336390', Http Status Code: 'NotFound', Response Content: ''  
